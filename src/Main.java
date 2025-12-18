@@ -3,10 +3,9 @@ import java.util.Arrays;
 public class Main {
     public static void main(String[] args) {
         Contacto contacto1 = new Contacto("Elker", "Herrera", "3003158254");
-        Contacto contacto2 = new Contacto("Ana", "Herrera", "3003158254");
+        Contacto contacto2 = new Contacto("Ana", "Torres", "3003158254");
         Contacto contacto3 = new Contacto("Daniel", "Herrera", "3003158254");
         Contacto contacto4 = new Contacto("Jeffersson", "Herrera", "3003158254");
-        Contacto contacto6 = new Contacto("Jeffersson", "Herrera", "303158254");
 
         Contacto contacto5 = new Contacto();
 
@@ -19,15 +18,22 @@ public class Main {
 
         Agenda miAgenda = new Agenda(agenda1);
 
+        System.out.println("---- Antes de agregar ----");
         miAgenda.listarContactos();
+        miAgenda.agendaLLena();
+        miAgenda.espaciosLibres();
+
+        System.out.println("--- Buscar contacto ---");
+        miAgenda.buscarContacto("Ana");
+        miAgenda.buscarContacto("Pedro");
+        miAgenda.buscarContacto("sneider");
 
         miAgenda.añadirContacto(contacto4);
 
+        miAgenda.añadirContacto(contacto2);
+
         miAgenda.listarContactos();
 
-        miAgenda.modificarTelefono("Ana", "Herrera", "999999999");
-        miAgenda.eliminarContacto(new Contacto("Daniel", "Herrera", ""));
-        miAgenda.listarContactos();
 
 
     }
