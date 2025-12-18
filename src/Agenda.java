@@ -28,15 +28,31 @@ public class Agenda {
 
     }
     public void listarContactos(){
-        int cantContatactos = 0;
-        for(int i = 0; i < agenda2.length; i++){
-            if(agenda2[i] != null){
-                System.out.println(agenda2[i].getNombre());
+        for (Contacto c : agenda2) {
+            if (c != null) {
+                System.out.println(
+                        c.getNombre() + " " +
+                        c.getApellido() + " - " +
+                        c.getTelefono()
+
+                );
             }
         }
     }
+
     public void buscarContacto(String nombre){
 
+        for (Contacto c : agenda2) {
+            if (c != null && c.getNombre().equalsIgnoreCase(nombre)) {
+                System.out.println(
+                        c.getNombre() + " " +
+                                c.getApellido() + " - " +
+                                c.getTelefono()
+                );
+                return;
+            }
+        }
+        System.out.println("Contacto no encontrado");
     }
     public void eliminarContacto(Contacto C){
 

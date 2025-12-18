@@ -3,7 +3,7 @@ import java.util.Arrays;
 public class Main {
     public static void main(String[] args) {
         Contacto contacto1 = new Contacto("Elker", "Herrera", "3003158254");
-        Contacto contacto2 = new Contacto("Ana", "Herrera", "3003158254");
+        Contacto contacto2 = new Contacto("Ana", "Torres", "3003158254");
         Contacto contacto3 = new Contacto("Daniel", "Herrera", "3003158254");
         Contacto contacto4 = new Contacto("Jeffersson", "Herrera", "3003158254");
 
@@ -20,9 +20,17 @@ public class Main {
 
         Agenda miAgenda = new Agenda(agenda1);
 
+        System.out.println("---- Antes de agregar ----");
         miAgenda.listarContactos();
 
+        System.out.println("--- Buscar contacto ---");
+        miAgenda.buscarContacto("Ana");
+        miAgenda.buscarContacto("Pedro");
+        miAgenda.buscarContacto("Elker");
+
         miAgenda.añadirContacto(contacto4);
+
+
 
 
     }
