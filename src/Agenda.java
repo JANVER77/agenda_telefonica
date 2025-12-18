@@ -19,14 +19,29 @@ public class Agenda {
 
     public void añadirContacto(Contacto C){
         int tam_agenda = 0;
-        for(Contacto c : agenda2){
-            tam_agenda++;
+        for(int i = 0; i < agenda2.length; i++){
+            if(agenda2[i] != null){
+                tam_agenda++;
+            }
         }
-        agenda2[tam_agenda+1] = C;
-    }
-    public void existeContacto(Contacto C){
+        if(existeContacto(C)){
+            agenda2[tam_agenda+1] = C;
+        }
 
     }
+    public boolean existeContacto(Contacto C){
+        for(int i = 0; i < agenda2.length; i++){
+            if(agenda2[i] != null){
+                if(agenda2[i].getNombre().equals(C.getNombre()) && agenda2[i].apellido.equals(C.getApellido())){
+                    System.out.println("El contacto ya existe en la agenda");
+                    return false;
+                }
+            }
+
+        }
+        return true;
+    }
+
     public void listarContactos(){
         for (Contacto c : agenda2) {
             if (c != null) {
@@ -61,9 +76,32 @@ public class Agenda {
 
     }
     public void agendaLLena(){
+        boolean llena = true;
+
+        for (Contacto c : agenda2) {
+            if (c == null) {
+                llena = false;
+                break;
+            }
+        }
+
+        if (llena) {
+            System.out.println("La agenda esta llena. No tienes espacio disponible.");
+        } else {
+            System.out.println("La agenda aun tiene espacios disponibles.");
+        }
 
     }
     public void espaciosLibres(){
+        int espacios = 0;
+
+        for (Contacto c : agenda2) {
+            if (c == null) {
+                espacios++;
+            }
+        }
+
+        System.out.println("Estos son tus espacios disponibles en la agenda: " + espacios);
 
     }
 

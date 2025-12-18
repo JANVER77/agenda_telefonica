@@ -16,12 +16,12 @@ public class Main {
         agenda1[1] = contacto2;
         agenda1[2] = contacto3;
 
-        System.out.println(contacto2.getNombre());
-
         Agenda miAgenda = new Agenda(agenda1);
 
         System.out.println("---- Antes de agregar ----");
         miAgenda.listarContactos();
+        miAgenda.agendaLLena();
+        miAgenda.espaciosLibres();
 
         System.out.println("--- Buscar contacto ---");
         miAgenda.buscarContacto("Ana");
@@ -30,6 +30,9 @@ public class Main {
 
         miAgenda.añadirContacto(contacto4);
 
+        miAgenda.añadirContacto(contacto2);
+
+        miAgenda.listarContactos();
 
 
 
