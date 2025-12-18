@@ -18,6 +18,10 @@ public class Agenda {
     }
 
     public void añadirContacto(Contacto C){
+        if (existeContacto(C)) {
+            System.out.println("El contacto ya existe.");
+            return;
+        }
         int tam_agenda = 0;
         for(int i = 0; i < agenda2.length; i++){
             if(agenda2[i] != null){
@@ -33,12 +37,13 @@ public class Agenda {
         for(int i = 0; i < agenda2.length; i++){
             if(agenda2[i] != null){
                 if(agenda2[i].getNombre().equals(C.getNombre()) && agenda2[i].apellido.equals(C.getApellido())){
-                    return false;
+                    System.out.println("Contacto existe");
+                    return true;
                 }
             }
 
         }
-        return true;
+        return false;
     }
 
     public void listarContactos(){
@@ -52,12 +57,43 @@ public class Agenda {
     public void buscarContacto(String nombre){
 
     }
-    public void eliminarContacto(Contacto C){
+    public void eliminarContacto(Contacto C) {
 
-    }
-    public void modificarTelefono(Contacto C){
+        for (int i = 0; i < agenda2.length; i++) {
 
+            if (agenda2[i] != null) {
+                if (agenda2[i].getNombre().equals(C.getNombre()) &&
+                        agenda2[i].getApellido().equals(C.getApellido())) {
+
+                    agenda2[i] = null; // eliminar contacto
+                    System.out.println("Contacto eliminado correctamente.");
+                    return;
+                }
+            }
+        }
+
+        System.out.println("El contacto no existe.");
     }
+
+    public void modificarTelefono(String nombre, String apellido, String nuevoTelefono) {
+
+        for (int i = 0; i < agenda2.length; i++) {
+
+            if (agenda2[i] != null) {
+                if (agenda2[i].getNombre().equals(nombre) &&
+                        agenda2[i].getApellido().equals(apellido)) {
+
+                    agenda2[i].setTelefono(nuevoTelefono);
+                    System.out.println("Teléfono modificado correctamente.");
+                    return;
+                }
+            }
+        }
+
+        // Si no se encontró
+        System.out.println("El contacto no existe.");
+    }
+
     public void agendaLLena(){
 
     }

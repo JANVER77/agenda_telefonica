@@ -6,6 +6,7 @@ public class Main {
         Contacto contacto2 = new Contacto("Ana", "Herrera", "3003158254");
         Contacto contacto3 = new Contacto("Daniel", "Herrera", "3003158254");
         Contacto contacto4 = new Contacto("Jeffersson", "Herrera", "3003158254");
+        Contacto contacto6 = new Contacto("Jeffersson", "Herrera", "303158254");
 
         Contacto contacto5 = new Contacto();
 
@@ -23,6 +24,11 @@ public class Main {
         miAgenda.añadirContacto(contacto4);
 
         miAgenda.listarContactos();
+
+        miAgenda.modificarTelefono("Ana", "Herrera", "999999999");
+        miAgenda.eliminarContacto(new Contacto("Daniel", "Herrera", ""));
+        miAgenda.listarContactos();
+
 
     }
 }
