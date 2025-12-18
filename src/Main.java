@@ -22,6 +22,8 @@ public class Main {
 
         miAgenda.añadirContacto(contacto4);
 
+        miAgenda.añadirContacto(contacto2);
+
         miAgenda.listarContactos();
 
     }

@@ -33,6 +33,7 @@ public class Agenda {
         for(int i = 0; i < agenda2.length; i++){
             if(agenda2[i] != null){
                 if(agenda2[i].getNombre().equals(C.getNombre()) && agenda2[i].apellido.equals(C.getApellido())){
+                    System.out.println("El contacto ya existe en la agenda");
                     return false;
                 }
             }
