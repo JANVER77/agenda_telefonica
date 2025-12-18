@@ -26,7 +26,7 @@ public class Main {
         System.out.println("--- Buscar contacto ---");
         miAgenda.buscarContacto("Ana");
         miAgenda.buscarContacto("Pedro");
-        miAgenda.buscarContacto("Elker");
+        miAgenda.buscarContacto("sneider");
 
         miAgenda.añadirContacto(contacto4);
 
