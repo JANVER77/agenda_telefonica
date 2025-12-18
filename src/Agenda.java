@@ -1,12 +1,30 @@
 import java.util.ArrayList;
 
 public class Agenda {
-    //private ArrayList<Contacto> agenda = new ArrayList<>();
+    int max_agenda;
+    Contacto[]  agenda2;
 
-    Contacto[]  agenda2 = new Contacto[10];
+    public Agenda() {
+    }
 
-    public Agenda(Contacto[] C) {
-        this.agenda2 = C;
+    public Agenda(int max_agenda) {
+        this.max_agenda = max_agenda;
+    }
+
+    public Agenda(int max_agenda, Contacto[] contactos) {
+        this.max_agenda = max_agenda;
+        this.agenda2 = new Contacto[max_agenda];
+        for (int c = 0; c < contactos.length && c < max_agenda; c++){
+            this.agenda2[c] = contactos[c];
+        }
+    }
+
+    public int getMax_agenda() {
+        return max_agenda;
+    }
+
+    public void setMax_agenda(int max_agenda) {
+        this.max_agenda = max_agenda;
     }
 
     public Contacto[] getAgenda2() {
@@ -33,6 +51,10 @@ public class Agenda {
         for(int i = 0; i < agenda2.length; i++){
             if(agenda2[i] != null){
                 if(agenda2[i].getNombre().equals(C.getNombre()) && agenda2[i].apellido.equals(C.getApellido())){
+                    if(validarNumTelefono(C.getTelefono())){
+                        System.out.println("El numero de telefono no es valido");
+                        return false;
+                    }
                     System.out.println("El contacto ya existe en la agenda");
                     return false;
                 }
@@ -135,6 +157,13 @@ public class Agenda {
         System.out.println("Estos son tus espacios disponibles en la agenda: " + espacios);
 
     }
+
+    public boolean validarNumTelefono(String tel){
+        if(tel.length() == 10 && tel.startsWith("3") || tel.startsWith("6")){
+            return true;
+        }
+        return false;
+        }
 
 }
 

@@ -16,7 +16,7 @@ public class Main {
         agenda1[1] = contacto2;
         agenda1[2] = contacto3;
 
-        Agenda miAgenda = new Agenda(agenda1);
+        Agenda miAgenda = new Agenda(15, agenda1);
 
         System.out.println("---- Antes de agregar ----");
         miAgenda.listarContactos();
@@ -34,6 +34,8 @@ public class Main {
 
         miAgenda.listarContactos();
 
+
+        System.out.println(miAgenda.agenda2.length);
 
 
     }
