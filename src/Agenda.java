@@ -1,10 +1,8 @@
-import java.util.ArrayList;
-
 public class Agenda {
     int max_agenda;
     Contacto[]  agenda2;
 
-    public Agenda() {
+    public Agenda(Contacto[] contactos) {
     }
 
     public Agenda(int max_agenda) {
@@ -43,7 +41,7 @@ public class Agenda {
             }
         }
         if(existeContacto(C)){
-            agenda2[tam_agenda+1] = C;
+            agenda2[tam_agenda] = C;
         }
 
     }
@@ -159,7 +157,7 @@ public class Agenda {
     }
 
     public boolean validarNumTelefono(String tel){
-        if(tel.length() == 10 && tel.startsWith("3") || tel.startsWith("6")){
+        if(tel.length() == 10 && (tel.startsWith("3") || tel.startsWith("6"))){
             return true;
         }
         return false;
