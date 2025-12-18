@@ -45,9 +45,32 @@ public class Agenda {
 
     }
     public void agendaLLena(){
+        boolean llena = true;
+
+        for (Contacto c : agenda2) {
+            if (c == null) {
+                llena = false;
+                break;
+            }
+        }
+
+        if (llena) {
+            System.out.println("La agenda esta llena. No tienes espacio disponible.");
+        } else {
+            System.out.println("La agenda aun tiene espacios disponibles.");
+        }
 
     }
     public void espaciosLibres(){
+        int espacios = 0;
+
+        for (Contacto c : agenda2) {
+            if (c == null) {
+                espacios++;
+            }
+        }
+
+        System.out.println("Estos son tus espacios disponibles en la agenda: " + espacios);
 
     }
 

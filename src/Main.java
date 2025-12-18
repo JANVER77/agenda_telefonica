@@ -21,6 +21,8 @@ public class Main {
         Agenda miAgenda = new Agenda(agenda1);
 
         miAgenda.listarContactos();
+        miAgenda.agendaLLena();
+        miAgenda.espaciosLibres();
 
         miAgenda.añadirContacto(contacto4);
 
