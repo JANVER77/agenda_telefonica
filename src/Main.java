@@ -16,14 +16,13 @@ public class Main {
         agenda1[1] = contacto2;
         agenda1[2] = contacto3;
 
-        System.out.println(contacto2.getNombre());
-
         Agenda miAgenda = new Agenda(agenda1);
 
         miAgenda.listarContactos();
 
         miAgenda.añadirContacto(contacto4);
 
+        miAgenda.listarContactos();
 
     }
 }
